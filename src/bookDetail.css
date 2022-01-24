@@ -1,0 +1,65 @@
+.book-detail-grid{
+    display: grid;
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    grid-template-columns: 30% 65%;
+    column-gap: 2rem;
+}
+
+.left{
+    margin-bottom: 1rem;
+}
+
+.image-left img{
+    width: 50%;
+}
+
+.details-left{
+    margin-top: 50px;
+}
+
+.secondary-heading{
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+.details-left p{
+    margin-bottom: 10px;
+}
+
+.primary-heading{
+    letter-spacing: 1px;
+}
+.right-authors{
+    display: flex;
+    margin-top: 10px;
+}
+.right-authors p{
+    margin-right: 5px;
+}
+
+.description-right{
+    margin-top: 20px;
+    color: gray;
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+.button-right {
+    margin-top: 20px;
+    display:inline-block;
+    background-color: #00B4CC;
+    padding: 10px 30px;
+    color: black;
+    border-radius: 30px;
+    transition: all 0.3s;
+}
+.button-right:hover{
+    color: white;
+}
+
+@media screen and (max-width : 768px) {
+    .book-detail-grid{
+        grid-template-columns: 100%;
+    }
+}
