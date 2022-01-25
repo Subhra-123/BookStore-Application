@@ -1,9 +1,12 @@
 import React from "react";
 import "./bookItem.css";
+import { useNavigate } from "react-router-dom";
 
 const BookItem = ({ book }) => {
+  let navigate = useNavigate();
   const handleClick = () => {
     localStorage.setItem("book", JSON.stringify(book));
+    navigate(`/book/${book.id}`);
   };
   const {title, authors, imageLinks} = book.volumeInfo;
   return (

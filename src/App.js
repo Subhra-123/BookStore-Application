@@ -1,7 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
-import BookItem from "./BookItem";
-import SearchBar from "./SearchBar";
+import { Routes, Route } from "react-router-dom";
+import BookDetail from "./components/BookDetail";
+import HomeComponent from "./components/HomeComponent";
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -20,16 +21,22 @@ const App = () => {
 
   return (
     <div>
-        <SearchBar searchTerm={searchTerm}
+      <Routes>
+        <Route
+          path="/"
+          exact
+          element={
+            <HomeComponent
+              searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
-              fetchData={fetchData} />
-              <div className="book-grid">
-
-              {bookList.length>0?bookList.map(book=><BookItem book={book}/>):null}
-              </div>
+              bookList={bookList}
+              fetchData={fetchData}
               
-              
-            
+            />
+          }
+        />
+        <Route path="/book/:id" exact element={<BookDetail bookList={bookList} />} />
+      </Routes>
     </div>
   );
 };
